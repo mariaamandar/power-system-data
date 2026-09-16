@@ -13,3 +13,16 @@ print(df.head())
 
 print(df.index[0])
 
+#print(df.loc["2026-01-01 03:00"])
+
+lastprofil = df.loc["2026-03-01", "Consumption"]
+#print(lastprofil)
+
+lastprofil.plot()
+plt.title("Consumption profile for March 1, 2026")
+plt.xlabel("Time")
+plt.ylabel("Consumption")
+plt.grid()
+plt.legend(["Consumption"])
+#plt.show()
+plt.savefig("ovinger/oving4/consumption_profile_march_2026.png")
