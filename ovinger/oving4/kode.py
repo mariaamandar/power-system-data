@@ -35,3 +35,17 @@ gjennomsnitt_prod = df["Production"].mean()
 print("Maks produksjon:", maks_prod)
 print("Min produksjon:", min_prod)
 print("Gjennomsnitt produksjon:", gjennomsnitt_prod)
+
+maks_netto = df["Netto"].max()
+min_netto = df["Netto"].min()
+
+tid_maks_netto = df["Netto"].idxmax()
+tid_min_netto = df["Netto"].idxmin()
+
+print("Maks netto:", maks_netto)
+print("Tid for maks netto:", tid_maks_netto)
+print("Min netto:", min_netto)
+print("Tid for min netto:", tid_min_netto)
+
+total_prod = df["Production"].sum()
+print("Total produksjon:", total_prod)
