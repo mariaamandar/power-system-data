@@ -26,3 +26,12 @@ plt.grid()
 plt.legend(["Consumption"])
 #plt.show()
 plt.savefig("ovinger/oving4/consumption_profile_march_2026.png")
+
+df["Netto"] = (df["Production"]- df["Consumption"])
+
+maks_prod = df["Production"].max()
+min_prod = df["Production"].min()
+gjennomsnitt_prod = df["Production"].mean()
+print("Maks produksjon:", maks_prod)
+print("Min produksjon:", min_prod)
+print("Gjennomsnitt produksjon:", gjennomsnitt_prod)
