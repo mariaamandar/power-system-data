@@ -14,3 +14,5 @@ __pycache__/
 # Operating system files
 .DS_Store
 Thumbs.db
+
+ovinger/oving5/consumption_per_group_mba_hour.csv
