@@ -7,8 +7,8 @@ import matplotlib.dates as mdates
 t = np.linspace(0, 24, 400)
 
 A = 800
-mu = 13
-sigma = 3
+mu = 13.5
+sigma = 4
 
 G = A * np.exp(-(t-mu)**2/(2*sigma**2))
 
@@ -35,9 +35,7 @@ innstraaling = df.loc["2023-07-08", "G(i)"]
 
 fig, ax = plt.subplots(figsize=(8, 4))
 
-ax.xaxis.set_major_formatter(mdates.DateFormatter("%H:%M", tz=innstraaling.index.tz)) # slik at kun time og minutt vises på x-aksen, ikke hele datoen
-
-ax.plot(innstraaling.index, innstraaling)
+ax.plot(innstraaling.index.hour, innstraaling)
 ax.set_title("Global innstråling 8. juli 2023")
 ax.set_xlabel("Tid")
 ax.set_ylabel(r"Innstråling [W/m$^2$]")
@@ -46,3 +44,15 @@ ax.grid(True)
 #plt.show()
 #plt.savefig("ovinger/oving6/innstraaling_8_juli.png")
 
+# Oppgave 6
+fig, ax = plt.subplots(figsize=(8, 4))
+ax.plot(t, G, label="Gauss-modell")
+ax.plot(innstraaling.index.hour, innstraaling.values, "o-", label="PVGIS-data")
+ax.set_title("Gauss-modell og PVGIS-data, 8. juli 2023")
+ax.set_xlabel("Tid [timer]")
+ax.set_ylabel(r"Innstråling [W/m$^2$]")
+ax.legend()
+ax.grid(True)
+
+plt.show()
+#plt.savefig("ovinger/oving6/Gauss_modell_og_PVGIS_data_endret")
